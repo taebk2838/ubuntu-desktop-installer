@@ -21,9 +21,8 @@ RUN \
  sudo mv chromedriver /usr/local/bin/ && \
 
  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - && \
-
+ apt-get -y install sudo dialog apt-utils && \
  sudo apt-get install apt-transport-https -y && \
- apt -y install dialog && \
  sudo apt-get install python3-tk -y && \
 
  sudo apt-get install python-tk -y && \
