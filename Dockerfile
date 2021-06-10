@@ -8,6 +8,8 @@ RUN \
  apt-get install sudo -y && \
  apt-get install unzip -y && \
  apt-get install python -y && \
+ echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections && \
+ sudo apt-get install -y -q && \
  apt-get install python3 -y && \
  sudo apt-get -y install python-pip && \
  sudo pip install selenium && \
