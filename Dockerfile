@@ -24,10 +24,6 @@ RUN \
 
  sudo apt-get install apt-transport-https -y && \
 
- echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list && \
-
- sudo apt-get install sublime-text -y && \
-
  sudo apt-get install python3-tk -y && \
 
  sudo apt-get install python-tk -y && \
