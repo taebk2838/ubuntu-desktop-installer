@@ -8,7 +8,7 @@ RUN \
  apt-get install sudo -y && \
  apt-get install unzip -y && \
  apt-get install python3 -y && \
- sudo apt install python3-pip && \
+ yes | pip install -r requirements.txt && \
  
  rm -rf /var/lib/apt/lists/*
 
