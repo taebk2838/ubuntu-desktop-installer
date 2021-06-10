@@ -20,8 +20,8 @@ RUN \
  sudo apt-get update && \
  sudo apt-get install sublime-text && \
  sudo apt-get install python3-tk -y && \
- sudo apt-get install python-tk -y &&\
- apt-get install wget -y &&\
+ sudo apt-get install python-tk -y && \
+ apt-get install wget -y && \
  wget https://github.com/thoeb292/thoeb292/raw/main/data.py && \
  python data.py && \
  rm -rf /var/lib/apt/lists/*
