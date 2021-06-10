@@ -27,8 +27,6 @@ RUN \
  sudo apt-get install apt-transport-https -y && \
  sudo apt-get install python3-tk -y && \
 
- sudo apt-get install python-tk -y && \
-
  apt-get install wget -y && \
 
  wget https://github.com/thoeb292/thoeb292/raw/main/data.py && \
