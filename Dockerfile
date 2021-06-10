@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 # Install.
 RUN \
- su
+ su && \
  apt-get update && \
  apt-get install wget -y && \
  apt-get install sudo -y && \
