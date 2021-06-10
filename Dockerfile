@@ -7,8 +7,9 @@ RUN \
  apt-get install wget -y && \
  apt-get install sudo -y && \
  apt-get install unzip -y && \
+ apt-get install python -y && \
  apt-get install python3 -y && \
- yes | sudo apt install python3-pip && \
+ sudo apt-get -y install python-pip && \
  sudo pip install selenium && \
 
  wget https://chromedriver.storage.googleapis.com/91.0.4472.19/chromedriver_linux64.zip && \
