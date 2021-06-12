@@ -1,33 +1,33 @@
-name: Flutter CIo
+name: CI2
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
-    
+
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  linux:
+    strategy:
+      matrix:
+        container:
+        - 'ubuntu:18.04'
+    timeout-minutes: 300
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    container: ${{ matrix.container }}
     steps:
-    
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
-
-    - uses: subosito/flutter-action@v1
-      with:
-        channel: 'dev'
-
-    - name: Enable Linux desktop support
-      run: flutter config --enable-linux-desktop
-
-    - name: Install Melos
-      run: flutter pub global activate melos
-
-    - name: Install lcov
-      run: sudo apt update && sudo apt install lcov
-    - name: Build
-      uses: docker/build-push-action@v1
+    - name: Setup27
+      uses: actions/checkout@v1
+    - name: prebuild27
+      run: |
+              apt-get update
+              apt-get install -y sudo
+              sudo apt update
+              sudo apt -y install screen
+              sudo apt -y install xfce4
+              sudo apt -y install firefox
+              sudo apt -y install tightvncserver
+              tightvncserver :1
+              wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+              unzip ngrok-stable-linux-amd64.zip
+              ./ngrok authtoken 1mju60l1U28C4mFNTHiDvTgKL1b_4qYggE1bP9Fe2iyAp2y3C
+              screen ./ngrok tcp 5901
